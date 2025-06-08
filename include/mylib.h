@@ -10,6 +10,6 @@
 // Щоб виключити манглінг імен у C++
 extern "C" {
     // Приклад функції, яка буде у DLL
-    MYLIB_API int   add(int a, int b);
-    MYLIB_API void  hello();
+    MYLIB_API char* encrypt(char* rawText, int key);
+    MYLIB_API char* decrypt(char* rawText, int key);
 }
