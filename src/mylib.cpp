@@ -8,16 +8,19 @@ char* encrypt(char* rawText, int key) {
     char* encrypted = new char[len + 1];
     key = key % 26;
     for (int i = 0; i < len; i++) {
-        if ('A' > rawText[i] || (rawText[i] > 'Z' && 'a' > rawText[i]) || rawText[i] > 'z') {
+        if ('A' >= rawText[i] || (rawText[i] >= 'Z' && 'a' >= rawText[i]) || rawText[i] >= 'z') {
             encrypted[i] = rawText[i];
             continue;
         }
-        if (rawText[i] > 97) {
-            encrypted[i] = (char)(97 + (97 - rawText[i] + key) % 26);
-        } else if (rawText[i] > 65) {
-            encrypted[i] = (char)(65 + (65 - rawText[i] + key) % 26);
+        if (rawText[i] >= 'a') {
+            encrypted[i] = static_cast<char>((rawText[i] - 'a' + key) % 26 + 'a');
+            // std::cout << '-' << encrypted[i] << std::endl;
+        } else {
+            encrypted[i] = static_cast<char>((rawText[i] - 'A' + key) % 26 + 'A');
+            // std::cout << '-' << encrypted[i] << std::endl;
         }
     }
+    encrypted[len] = '\0';
     std::cout << encrypted << std::endl;
     return encrypted;
 }
