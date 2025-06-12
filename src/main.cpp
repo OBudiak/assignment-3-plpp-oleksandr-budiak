@@ -2,7 +2,6 @@
 #include <iostream>
 #include <windows.h>
 
-// Оголошення типів функцій
 using fn_encrypt = const char* (__cdecl*)(const char*, int);
 using fn_decrypt = const char* (__cdecl*)(const char*, int);
 
