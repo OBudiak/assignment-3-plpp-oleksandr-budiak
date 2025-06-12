@@ -1,5 +1,4 @@
-﻿#define MYLIB_EXPORTS
-#include "mylib.h"
+﻿#include "mylib.h"
 #include <iostream>
 #include <string.h>
 
@@ -26,7 +25,7 @@ char* encrypt(char* rawText, int key) {
         }
     }
     encrypted[len] = '\0';
-    std::cout << encrypted << std::endl;
+    // std::cout << encrypted << std::endl;
     return encrypted;
 }
 

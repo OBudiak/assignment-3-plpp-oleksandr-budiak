@@ -14,7 +14,8 @@ add_executable(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME} PRIVATE MyDll)
 
-# Примусово ставимо, що це консольний EXE
 set_target_properties(${PROJECT_NAME} PROPERTIES
         WIN32_EXECUTABLE FALSE
 )
+
+target_compile_definitions(MyDll PRIVATE BUILD_DLL)
